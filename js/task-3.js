@@ -6,23 +6,26 @@
 
 // const findBestEmployee = function (employees) {
 //   const bestResult = Math.max(...Object.values(employees));
-//   const employeesNames = Object.keys(employees);
+//   const entrees = Object.entries(employees);
 
-//   for (let employee of employeesNames) {
-//     if (employees[employee] === bestResult) {
-//       return employee;
+//   for (let [name, result] of entrees) {
+//     if (result === bestResult) {
+//       return name;
 //     }
 //   }
 // };
-const findBestEmployee = function (employees) {
-  const bestResult = Math.max(...Object.values(employees));
-  const entrees = Object.entries(employees);
 
-  for (let [name, result] of entrees) {
-    if (result === bestResult) {
-      return name;
+const findBestEmployee = function (employees) {
+  let bestResult = 0;
+  let bestEmpoyee = null;
+
+  for (const [employee, result] of Object.entries(employees)) {
+    if (result > bestResult) {
+      bestResult = result;
+      bestEmpoyee = employee;
     }
   }
+  return bestEmpoyee;
 };
 
 /*
