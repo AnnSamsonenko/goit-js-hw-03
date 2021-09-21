@@ -9,16 +9,15 @@ const products = [
   { name: "Захват", price: 1200, quantity: 2 },
 ];
 
-const getAllPropValues = function (arr, prop) {
-  let propArray = [];
-  for (let product of products) {
-    if (product[prop]) {
-      propArray.push(product[prop]);
-    }
-  }
-  return propArray;
+const getAllPropValues = (arr, prop) => {
+  return arr
+    .filter((product) => product.hasOwnProperty(prop))
+    .reduce((keyArray, product) => {
+      keyArray.push(product[prop]);
+      return keyArray;
+    }, []);
 };
-
+//
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
  */

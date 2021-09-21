@@ -4,14 +4,11 @@
 
 //РЕШЕНИЕ
 
-const countTotalSalary = function (employees) {
-  let totalSalary = 0;
-  const arraySalaries = Object.values(employees);
-
-  for (let salary of arraySalaries) {
-    totalSalary += salary;
-  }
-  return totalSalary;
+const countTotalSalary = (employees) => {
+  return Object.values(employees).reduce(
+    (total, salary) => (total += salary),
+    0
+  );
 };
 
 /*

@@ -9,19 +9,14 @@
 //РЕШЕНИЕ
 
 const user = {
-  name: 'Mango',
+  name: "Mango",
   age: 20,
-  hobby: 'html',
+  hobby: "html",
   premium: true,
 };
 
-user.mood = 'happy';
-user.hobby = 'skydiving';
+user.mood = "happy";
+user.hobby = "skydiving";
 user.premium = false;
 
-const keyArray = Object.keys(user);
-
-for (let key of keyArray) {
-    console.log(`${key} : ${user[key]}`);
-};
-
+Object.keys(user).forEach((key) => console.log(`${key} : ${user[key]}`));

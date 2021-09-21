@@ -4,10 +4,7 @@
 
 //РЕШЕНИЕ
 
-const countProps = function (obj) {
-  const propsArray = Object.keys(obj);
-  return propsArray.length;
-};
+const countProps = (obj) => Object.keys(obj).length;
 
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.

@@ -15,16 +15,16 @@
 //   }
 // };
 
-const findBestEmployee = function (employees) {
+const findBestEmployee = (employees) => {
   let bestResult = 0;
   let bestEmpoyee = null;
-
-  for (const [employee, result] of Object.entries(employees)) {
+  Object.entries(employees).forEach(([employee, result]) => {
     if (result > bestResult) {
       bestResult = result;
       bestEmpoyee = employee;
     }
-  }
+  });
+
   return bestEmpoyee;
 };
 

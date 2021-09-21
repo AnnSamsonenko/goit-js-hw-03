@@ -11,12 +11,11 @@ const products = [
   { name: "Захват", price: 1200, quantity: 2 },
 ];
 
-const calculateTotalPrice = function (allProducts, productName) {
-  for (let product of products) {
-    if (product.name === productName) {
-      return product.price * product.quantity;
-    }
-  }
+const calculateTotalPrice = (allProducts, productName) => {
+  const productToFind = allProducts.find(
+    (product) => product.name === productName
+  );
+  return productToFind.quantity * productToFind.price;
 };
 
 /*
